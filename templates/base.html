@@ -138,6 +138,440 @@ main{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
     </style>
+    <style>
+      .anet-header {
+        position: absolute;
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 22px 40px;
+      }
+    
+      .anet-header img {
+        cursor: pointer;
+      }
+    
+      .anet-options {
+        width: 220px;
+      }
+    
+      .anet-options ul {
+        display: flex;
+        justify-content: space-between;
+      }
+    
+      .anet-options ul li {
+        color: #fff;
+        list-style: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+    
+      .anet-video-container {
+        width: 100%;
+        height: 80vh;
+      }
+    
+      #anet-video {
+        width: 100%;
+        height: 80vh;
+        object-fit: cover;
+      }
+    
+      .anet-cursos-title {
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        padding: 30px;
+        position: relative;
+        margin-top: 15px;
+        font-size: 72px;
+        background: linear-gradient(90deg, #090979 15%, #00d4ff 100%);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    
+      .anet-cursos-title::after {
+        content: "";
+        width: 300px;
+        border-bottom: solid 3px #00dccf;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        transform: translate(-50%, 40px);
+      }
+    
+      .anet-card {
+        position: relative;
+        width: 400px;
+        background-color: #efefef;
+      }
+    
+      .anet-card-code {
+        position: absolute;
+        height: 15px;
+        width: fit-content;
+        font-size: 14px;
+        background-color: #2f3880;
+        top: 17px;
+        left: -10px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 30px;
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+      }
+    
+      .anet-card-image {
+        height: 210px;
+      }
+    
+      .anet-card-body {
+        padding: 10px 20px;
+      }
+    
+      .anet-card-header {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .anet-card-title {
+        font-size: 20px;
+        color: #000;
+        margin-bottom: 3px;
+      }
+    
+      .anet-card-owner {
+        font-size: 17px;
+        color: #4e4e4e;
+        margin-bottom: 15px;
+      }
+    
+      .anet-card-description {
+        font-size: 17px;
+        color: #4e4e4e;
+        margin-bottom: 25px;
+      }
+    
+      .anet-card-actions {
+        text-align: center;
+      }
+    
+      .anet-card-actions button {
+        width: 100%;
+        color: #fff;
+        font-size: 17px;
+        height: 35px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18), 0 1px 2px 0 rgba(0, 0, 0, 0.04), 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+        background-image: linear-gradient(262deg, #00dccf 0%, #0397bb 100%);
+        border: none;
+        font-weight: bold;
+        text-shadow: none;
+      }
+    
+      .anet-footer {
+        padding: 40px 20px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #032535;
+        color: #DBE4EB;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    
+      .anet-footer .anet-img-container {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .anet-footer .anet-img-container span {
+        margin: 10px;
+        text-align: center;
+        color: #8f9190;
+      }
+    
+      .anet-img-container {
+        padding: 20px 0px;
+        width: 20%
+      }
+    
+      .anet-img-container a {
+        display: contents;
+      }
+    
+      .anet-footer span {
+        display: block;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+    
+      .anet-directions {
+        padding: 20px 0px;
+        width: 35%;
+        text-align: center;
+      }
+    
+      .anet-directions .anet-dir1,
+      .anet-dir2 {
+        margin-bottom: 10px;
+      }
+    
+      .anet-contacts .anet-contact1,
+      .anet-contact2 {
+        margin-bottom: 10px;
+      }
+    
+      .anet-contacts {
+        padding: 20px 0px;
+        width: 30%;
+        text-align: center;
+      }
+    
+      .anet-social {
+        padding: 20px 0px;
+        width: 15%;
+        text-align: center;
+      }
+    
+      .anet-social ul {
+        display: contents;
+        flex-direction: column;
+      }
+    
+      .anet-social ul li {
+        list-style: none;
+        margin-bottom: 10px;
+      }
+    
+      .anet-social ul li i {
+        margin-right: 5px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    
+      .anet-social ul li a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #8f9190;
+      }
+    
+      .anet-vertical-line {
+        height: 130px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 20px auto;
+      }
+    
+      @media (max-width: 768px) {
+        .anet-cursos-title {
+          font-size: 25px;
+        }
+    
+        .anet-footer {
+          display: flex;
+          flex-direction: column;
+        }
+    
+        .anet-img-container {
+          width: 100%
+        }
+    
+        .anet-directions {
+          width: 100%
+        }
+    
+        .anet-contacts {
+          width: 100%
+        }
+    
+        .anet-social {
+          width: 100%
+        }
+    
+        .anet-vertical-line {
+          display: none;
+        }
+      }
+    
+      .anet-login-container {
+        position: relative;
+        height: 100vh;
+      }
+    
+      .anet-login-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 600px;
+        display: flex;
+        background-color: #efefef;
+      }
+    
+      .anet-login-box .col {
+        position: relative;
+        width: 50%
+      }
+    
+      .anet-login-box .col-login {
+        width: 50%
+      }
+    
+      .anet-login-img {
+        background-image: url("/static/aulanet-theme/images/login_background.78d9f67cda09.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .anet-login-img img {
+        width: 140px;
+      }
+    
+      .anet-login-title {
+        text-align: center;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+        padding: 10px;
+        position: relative;
+        margin-top: 15px;
+      }
+    
+      .anet-login-title::after {
+        content: "";
+        width: 79px;
+        border-bottom: solid 2px #00dccf;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        transform: translate(-50%, 40px);
+      }
+    
+      .anet-login-form {
+        padding: 50px 40px;
+        display: block;
+        text-align: center;
+      }
+    
+      .anet-login-form input[type="text"] {
+        width: 100%;
+        margin-bottom: 5px;
+        border: solid 2px #cecece;
+        background-color: #f9f9f9;
+        height: 35px;
+        padding-left: 10px;
+        color: #000;
+      }
+    
+      .anet-login-form input[type="text"]:focus {
+        color: #000;
+      }
+    
+      .anet-login-form input[type="password"] {
+        width: 100%;
+        margin-bottom: 5px;
+        border: solid 2px #cecece;
+        background-color: #f9f9f9;
+        height: 30px;
+        padding-left: 10px;
+        color: #000;
+      }
+    
+      .anet-login-form input[type="password"]:focus {
+        color: #000;
+      }
+    
+      .anet-login-form button {
+        min-width: 70%;
+        height: 40px;
+        color: #fff;
+        font-size: 17px;
+        font-weight: bold;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18), 0 1px 2px 0 rgba(0, 0, 0, 0.04), 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+        background-image: linear-gradient(262deg, #00dccf 0%, #0397bb 100%);
+        border: none;
+      }
+    
+      .anet-login-form input {
+        margin-bottom: 22px !important;
+      }
+    
+      .anet-create-account {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        padding-bottom: 35px;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    
+      .anet-create-account p {
+        font-size: 14px;
+        margin-bottom: 22px !important;
+      }
+    
+      .anet-btn2 {
+        min-width: 70%;
+        height: 40px;
+        color: #fff;
+        font-size: 17px;
+        font-weight: bold;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18), 0 1px 2px 0 rgba(0, 0, 0, 0.04), 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+        background-image: linear-gradient(262deg, #2f3880 0%, #0087d7 100%);
+        border: none;
+      }
+    
+      @media (max-width: 768px) {
+        .anet-footer {
+          display: flex;
+          flex-direction: column;
+        }
+    
+        .anet-img-container {
+          width: 100%
+        }
+    
+        .anet-directions {
+          width: 100%
+        }
+    
+        .anet-contacts {
+          width: 100%
+        }
+    
+        .anet-social {
+          width: 100%
+        }
+    
+        .anet-vertical-line {
+          display: none;
+        }
+    
+        .anet-login-img {
+          display: none;
+        }
+    
+        .col {
+          width: 100% !important;
+        }
+    
+        .anet-login-form button {
+          width: 100%
+        }
+    </style>
   </head>
 
   <body class="${static.dir_rtl()} <%block name='bodyclass'></%block> lang_${LANGUAGE_CODE}" id="contenedor_scroll">
