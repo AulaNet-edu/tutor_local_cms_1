@@ -83,7 +83,7 @@ from openedx.core.release import RELEASE_LINE
 		min-height:300px;
 	}
 #view-top, .wrapper-l, .wrapper-r{
-	background:#031b5f !important;
+	background:#032535 !important;
 }
 .wrapper-header{
     position:fixed;
@@ -137,6 +137,161 @@ main{
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
+    </style>
+<style>
+      
+      .anet-footer {
+        padding: 40px 20px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #032535;
+        color: #DBE4EB;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    
+      .anet-footer .anet-img-container {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .anet-footer .anet-img-container span {
+        margin: 10px;
+        text-align: center;
+        color: #8f9190;
+      }
+    
+      .anet-img-container {
+        padding: 20px 0px;
+        width: 20%
+      }
+    
+      .anet-img-container a {
+        display: contents;
+      }
+    
+      .anet-footer span {
+        display: block;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+    
+      .anet-directions {
+        padding: 20px 0px;
+        width: 35%;
+        text-align: center;
+      }
+    
+      .anet-directions .anet-dir1,
+      .anet-dir2 {
+        margin-bottom: 10px;
+      }
+    
+      .anet-contacts .anet-contact1,
+      .anet-contact2 {
+        margin-bottom: 10px;
+      }
+    
+      .anet-contacts {
+        padding: 20px 0px;
+        width: 30%;
+        text-align: center;
+      }
+    
+      .anet-social {
+        padding: 20px 0px;
+        width: 15%;
+        text-align: center;
+      }
+    
+      .anet-social ul {
+        display: contents;
+        flex-direction: column;
+      }
+    
+      .anet-social ul li {
+        list-style: none;
+        margin-bottom: 10px;
+      }
+    
+      .anet-social ul li i {
+        margin-right: 5px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    
+      .anet-social ul li a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #8f9190;
+      }
+    
+      .anet-vertical-line {
+        height: 130px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 20px auto;
+      }
+    
+      @media (max-width: 768px) {
+        .anet-cursos-title {
+          font-size: 25px;
+        }
+    
+        .anet-footer {
+          display: flex;
+          flex-direction: column;
+        }
+    
+        .anet-img-container {
+          width: 100%
+        }
+    
+        .anet-directions {
+          width: 100%
+        }
+    
+        .anet-contacts {
+          width: 100%
+        }
+    
+        .anet-social {
+          width: 100%
+        }
+    
+        .anet-vertical-line {
+          display: none;
+        }
+      }
+    
+    
+      @media (max-width: 768px) {
+        .anet-footer {
+          display: flex;
+          flex-direction: column;
+        }
+    
+        .anet-img-container {
+          width: 100%
+        }
+    
+        .anet-directions {
+          width: 100%
+        }
+    
+        .anet-contacts {
+          width: 100%
+        }
+    
+        .anet-social {
+          width: 100%
+        }
+      }
+      h2{
+        color: #00dccf;
+        font-size: 20px;
+      }
     </style>
   </head>
 
@@ -195,7 +350,9 @@ main{
         <%include file="widgets/sock.html" args="online_help_token=online_help_token" />
       % endif
       <%include file="widgets/footer.html" />
-
+<div style="font-size:11px; color:#fff;text-align:center;background:#032535">
+© <script>document.write(new Date().getFullYear())</script> - AulaNet
+</div>
       <div id="page-notification"></div>
     </div>
 
